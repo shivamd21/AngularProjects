@@ -1,0 +1,8 @@
+.content{
+    height: auto;
+    padding-top: 40px;
+    /* overflow: auto; */
+}
+.collapse.in{
+    display: block;
+}

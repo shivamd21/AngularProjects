@@ -1,0 +1,77 @@
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title style="font-size:30px;">Total Number Of Cases WorldWide <br> Updated On {{currentDate}}
+                </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Confirmed Cases</th>
+                            <th>Recovered Cases</th>
+                            <th>Active Cases</th>
+                            <th>Total Deaths</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let element of dataSource">
+                            <td>{{element.confirmed}}</td>
+                            <td>{{element.recovered}} </td>
+                            <td>{{element.active}}</td>
+                            <td>{{element.deaths}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+<br><br><br>
+<div class="row">
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+        <mat-card>
+            <mat-card-content>
+                <label id="example-radio-group-label">
+                    <h4>Select Your Cases Type</h4>
+                </label> <br>
+                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                    [(ngModel)]="casetype" (ngModelChange)="onCaseSelection()">
+                    <mat-radio-button class="example-radio-button" *ngFor="let c of cases" [value]="c">
+                        {{c}} &nbsp;&nbsp;
+                    </mat-radio-button> &nbsp;&nbsp;
+                </mat-radio-group> &nbsp;&nbsp;
+            </mat-card-content>
+        </mat-card>
+    </div>
+    </div>
+
+    <br><br>
+
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <mat-card>
+                <mat-card-content>
+                    <google-chart style="height:600px;width:auto;" [type]='chart.ColumnChart' [options]='chart.options' [data]='datatable'></google-chart>
+                   
+
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+    
+    <br><br>
+    
+<div class="row">
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <mat-card>
+        <mat-card-content>
+            <google-chart style="height:600px;width:auto;" [type]='chart.PieChart' [options]='chart.options' [data]='datatable'></google-chart>
+      
+
+        </mat-card-content>
+    </mat-card>
+</div>
+</div><br><br>

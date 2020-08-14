@@ -1,0 +1,64 @@
+<div class="container">
+
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark  sticky-top">
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#actionitem">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">Covid19 Tracker</a>
+
+    <div class="collapse navbar-collapse" id="actionitem">
+      <ul class=" navbar-nav">
+        <li class="nav-item active">
+          <a href="/" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/country" class="nav-link">Country</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class=" content">
+    <router-outlet></router-outlet>
+  </div>
+  <footer class="page-footer font-small bg-dark text-white pt-4">
+    <div class="container-fluid text-center text-md-left">
+      <div class="row">
+
+        <div class="col-md-3 ">
+          <h5 >Follow WHO for More:</h5> <br>
+          <a href="https://www.facebook.com/WHO/" style="font-size:28px;"
+            class="  text-white fa fa-facebook-official"></a>&nbsp;&nbsp;
+          <a href="https://twitter.com/who?lang=en" class=" text-white fa fa-twitter-square"
+            style=" font-size:28px;"></a>&nbsp;&nbsp;
+          <a href="https://www.instagram.com/who/?hl=en" class=" text-white fa fa-instagram"
+            style="font-size:28px;"></a>&nbsp;&nbsp;
+        </div>
+
+        <hr class="clearfix w-100 d-md-none pb-3">
+        <div class="col-md-6 ">
+          <h5 >About COVID-19:</h5>
+          <p>Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus.
+            Most people who fall sick with COVID-19 will experience mild to moderate symptoms and recover without
+            special treatment.</p>
+          For More Information:- &nbsp; <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019">Click
+            Here</a>
+        </div>
+        <hr class="clearfix w-100 d-md-none pb-3">
+        <div class="col-md-3">
+          <h5 >Contact us :</h5> <br>
+          <p>
+            <mat-icon class="text-white">phone</mat-icon>&nbsp; : &nbsp;8279970604
+          </p>
+          <p>
+            <mat-icon class="text-white">mail_outline</mat-icon>&nbsp; : &nbsp;harshit.d2195@gmail.com
+          </p>
+          <i class=" text-white fa fa-whatsapp" style="font-size:28px;"></i>&nbsp; : &nbsp; 9758700640
+        </div>
+      </div>
+    </div>
+    <br><br>
+    <div class="footer-copyright text-center py-3">Created By: &nbsp;
+      HARSHIT DWIVEDI
+    </div>
+  </footer>
+</div>

@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+<mat-card>
+    <mat-card-header>
+         <mat-card-title style="font-size:30px;" >Country Wise Data : <br> Updated On {{currentDate}}</mat-card-title>
+     </mat-card-header>
+  <mat-card-content>
+<mat-form-field appearance="fill">
+    <mat-label>Select Country</mat-label>
+    <mat-select [(ngModel)]="selected" (ngModelChange)="onCountrySelection()">
+      <mat-option >None</mat-option>
+      <mat-option *ngFor="let c of counteryList" [value]="c">{{c}}</mat-option>
+      </mat-select>
+  </mat-form-field>
+ <table *ngIf="data" class="table">
+    <thead>
+      <tr>
+        <th>Confirmed Cases</th>
+        <th>Recovered Cases</th>
+        <th>Active Cases</th>
+        <th>Total Deaths</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr >
+            <td>{{totalConfirmed}}</td>
+            <td>{{totalRecovered}} </td>
+            <td>{{totalActive}}</td>
+            <td>{{totalDeaths}}</td>
+          </tr> 
+    </tbody>
+  </table>
+ <div *ngIf="!data">
+      <h5><i>**Either No data for Selected Country or  Country is not Selected**</i>
+      </h5>
+      </div>
+</mat-card-content></mat-card></div></div>
+   <div   *ngIf="data" class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <mat-card>
+                <mat-card-content>
+                    <google-chart style="height:600px;width:auto;" [columns]="colns" [type]='chart.ColumnChart' [options]='chart.options'  [data]='datatable'></google-chart>
+       </mat-card-content>
+            </mat-card>
+        </div>
+</div><br><br>
